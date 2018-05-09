@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /tmp/src
+mvn package -DskipTests -Dcheckstyle.skip
+
