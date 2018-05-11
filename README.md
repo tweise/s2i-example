@@ -16,12 +16,30 @@ Build the application container:
 
 `s2i build . flink-builder-image s2i-test --copy`
 
-## S2I pointers
+Use `--copy` to pick up local uncommitted changes for the build.
 
-Simple Example:
+Incremental build (restore .m2 from previous image instead for pulling from central):
+
+`s2i build . flink-builder-image s2i-test --loglevel 1 --incremental`
+
+## Run example
+
+`docker run -p 8081:8081 s2i-test:latest local`
+
+`docker exec -it db552d50f890 bash`
+
+https://ci.apache.org/projects/flink/flink-docs-release-1.4/quickstart/setup_quickstart.html
+
+## References
+
+Simple S2I Example:
 
 https://github.com/debianmaster/openshift-java-s2i-example
 
-Creating Images (and the s2i scripts):
+Creating S2I Images (and the s2i scripts):
 
 https://docs.openshift.com/online/creating_images/s2i.html#build-process
+
+Apache Flink Docker:
+
+https://github.com/docker-flink/docker-flink

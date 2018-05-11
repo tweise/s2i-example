@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "s2i example run"
-
+#/docker-entrypoint.sh

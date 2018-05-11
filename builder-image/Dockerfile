@@ -22,6 +22,7 @@ FROM openjdk:8-jdk
 RUN set -ex; \
   apt-get update; \
   apt-get -y install libsnappy1v5; \
+  apt-get -y install netcat net-tools; \
   rm -rf /var/lib/apt/lists/*
 
 # Grab gosu for easy step-down from root
@@ -73,9 +74,9 @@ RUN set -ex; \
 
 # Install Maven
 RUN \
-  wget http://apache.claz.org/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz; \
-  tar -zxvf apache-maven-3.5.2-bin.tar.gz; \
-  mv apache-maven-3.5.2 /opt/maven
+  wget http://apache.claz.org/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.tar.gz; \
+  tar -zxvf apache-maven-3.5.3-bin.tar.gz; \
+  mv apache-maven-3.5.3 /opt/maven
 
 
 # Configure container
